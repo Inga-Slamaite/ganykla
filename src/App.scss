@@ -1,0 +1,321 @@
+@import "~bootstrap/scss/bootstrap";
+
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo2 {
+        animation: App-logo-spin2 infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes App-logo-spin2 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.black,
+.white {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.white {
+    color: black;
+    background-color: white;
+}
+
+.cat {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    transform: rotate(30deg);
+}
+
+.cat span {
+    color: pink;
+    transform: rotate(-30deg);
+}
+
+.dog-bin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+    .dog {
+        width: 150px;
+        height: 150px;
+        color: pink;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: skyblue;
+        margin: 6px;
+        &.cc {
+            border-radius: 50%;
+        }
+        &.sq {
+            border-radius: 10px;
+        }
+    }
+}
+
+
+/* CSS */
+
+button {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    &:hover,
+    &:focus {
+        // background-color: #fb8332;
+        background-color: #82451d;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    }
+    &:hover {
+        transform: translateY(-1px);
+    }
+    &:active {
+        background-color: #c85000;
+        box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+        transform: translateY(0);
+    }
+}
+
+.loader {
+    width: 300px;
+    height: 300px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+    .container {
+        height: 15px;
+        width: 105px;
+        display: flex;
+        position: relative;
+        .circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #fff;
+            animation: move 500ms linear 0ms infinite;
+            margin-right: 30px;
+            &:first-child {
+                position: absolute;
+                top: 0;
+                left: 0;
+                animation: grow 500ms linear 0ms infinite;
+            }
+            &:last-child {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-right: 0;
+                animation: grow 500ms linear 0s infinite reverse;
+            }
+        }
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0, 0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0px)
+    }
+    to {
+        transform: translateX(45px)
+    }
+}
+
+input {
+    font-size: 30px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    margin: 10px;
+}
+
+/*.field {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    background-color: skyblue;
+    .left {
+        width: 49%;
+        height: 100vh;
+        border-right: 3px dashed orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .right {
+        width: 49%;
+        height: 100vh;
+        border-left: 3px dashed orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    h1 {
+        position: absolute;
+        top: 15px;
+        font-size: 48px;
+        background-color: skyblue;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 48px;
+        button {
+            margin-left: 10px;
+            position: relative;
+            top: 4px;
+        }
+    }
+    .cow {
+        width: 120px;
+        height: 120px;
+        border: 1px dashed olive;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 7px;
+    }
+    
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    border: 3px dashed skyblue;
+    border-radius: 5px;
+    input {
+        font-size: 30px;
+        outline: none;
+        border: none;
+        padding: 5px;
+        margin: 10px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}*/
+
+
+
+.field {
+    width: 100%;
+    height: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: pink;
+
+}
+
+
+
